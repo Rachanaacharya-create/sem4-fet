@@ -8,13 +8,16 @@ courseLine.addEventListener("click", function () {
     if (newText !== null && newText.trim() !== "") {
         courseLine.textContent = newText;
 
-        // Ask user for font size
-        let fontSize = prompt("Enter font size (in px, e.g. 30, 40, 50):");
+        // Ask user for font size input
+        let fontSize = prompt("Enter font size (numbers only, e.g. 20, 30, 40):");
 
-        if (fontSize !== null && fontSize.trim() !== "" && !isNaN(fontSize)) {
+        // Convert input to number
+        fontSize = Number(fontSize);
+
+        if (!isNaN(fontSize) && fontSize > 0) {
             courseLine.style.fontSize = fontSize + "px";
         } else {
-            alert("Invalid font size. Using default size.");
+            alert("Invalid font size. Using default size 45px.");
             courseLine.style.fontSize = "45px";
         }
 
