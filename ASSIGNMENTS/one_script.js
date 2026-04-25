@@ -1,15 +1,13 @@
+alert("Do you want to change the second line of the website?");
 
-    alert("Do you want to change the second line of the website?");
+const courseLine = document.getElementById("Student");
 
-    const courseLine = document.getElementById("Student");
-    courseLine.addEventListener("click", function() {
+courseLine.addEventListener("click", function () {
+    let newText = prompt("Enter new text for the second line:");
 
-        let newText = prompt("Enter new text for the second line:");
-
-        if (newText !== null && newText.trim() !== "") {
-          courseLine.textContent=newText;
-        } else {
-            alert("No changes made.");
-        }
-    
+    if (newText !== null && newText.trim() !== "") {
+        courseLine.textContent = newText;
+    } else {
+        alert("No changes made.");
+    }
 });
