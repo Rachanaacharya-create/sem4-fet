@@ -9,7 +9,7 @@ courseLine.addEventListener("click", function () {
         courseLine.textContent = newText;
 
         // 👇 Change font size a little bigger
-        courseLine.style.fontSize = "50px";   // original was ~default, now slightly bigger
+        courseLine.style.fontSize = "45px";   // original was ~default, now slightly bigger
         courseLine.style.fontWeight = "bold";  // optional improvement
 
     } else {
