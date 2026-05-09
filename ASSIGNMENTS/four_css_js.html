@@ -1,100 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MY PORTFOLIO</title>
+  <title>Z-Index Single Box Demo</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      margin-top: 50px;
+    }
 
-        .main-title{
-            text-align:center;
-            color:rgb(57, 17, 32);
-            font-size:55px;
-        }
+    .container {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      margin: auto;
+    }
 
-        #Student{
-            text-align:center;
-            color:rgb(105, 191, 220);
-            cursor: pointer;
-        }
+    .box {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      color: white;
+      font-size: 25px;
+      line-height: 200px;
+      border-radius: 10px;
+    }
 
-        .section-title{
-            text-align:center;
-            font-weight:bold;
-            margin-top:50px;
-        }
+    .red {
+      background: red;
+      z-index: 1;
+    }
 
-        p.DES{
-            text-align:center;
-            color:rgb(84, 1, 54);
-            font-size:19px;
-        }
+    .blue {
+      background: blue;
+      z-index: 2;
+    }
 
-        h3{
-            text-decoration: underline;
-        }
+    .green {
+      background: green;
+      z-index: 3;
+    }
 
-        /* NEW BOX FOR Z-INDEX DEMO */
-        .card {
-            position: relative;
-            width: 70%;
-            margin: 20px auto;
-            padding: 20px;
-            background: #f5f5f5;
-            border-radius: 10px;
-            z-index: 1;
-        }
-
-        /* OVERLAY (will appear above card) */
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.2);
-            z-index: 2;
-            display: none;
-        }
-    </style>
+    button {
+      margin-top: 20px;
+      padding: 10px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 
 <body>
 
-    <h1 class="main-title">RACHANA ACHARYA</h1>
+  <h1>Z-Index Demo</h1>
 
-    <div class="card" id="cardBox">
-        <div class="overlay" id="overlay"></div>
+  <!-- All boxes overlap in one place -->
+  <div class="container">
+    <div class="box red" id="redBox">Red</div>
+    <div class="box blue" id="blueBox">Blue</div>
+    <div class="box green" id="greenBox">Green</div>
+  </div>
 
-        <h2 id="Student">
-            Second year student / B.E in COMPUTER SCIENCE & ENGINEERING
-        </h2>
-    </div>
+  <br>
 
-    <h3 class="section-title">ABOUT ME</h3>
-    <p class="DES">
-        I am a college student who is focused on learning new skills related to my field. 
-        I am passionate about computer science and enjoy exploring new technologies.
-        I work hard to improve my skills and stay updated with the latest trends.
-        I am motivated to achieve my goals and build a successful career.
-    </p>
+  <!-- Buttons -->
+  <button onclick="showBox('redBox')">Show Red</button>
+  <button onclick="showBox('blueBox')">Show Blue</button>
+  <button onclick="showBox('greenBox')">Show Green</button>
 
-    <h3 class="section-title">MY GOALS</h3>
-    <p class="DES">
-        My goal is to become a skilled software engineer in the future.
-        I want to work on innovative projects that solve real-world problems. 
-        I aim to continuously learn and grow in my field. I also hope to contribute positively to the technology industry.
-    </p>
+  <script>
+    let z = 3;
 
-    <p>
-        <a href="https://rachanaacharya-create.github.io/sem4-fet/">MY HOMEPAGE</a>
-    </p>
+    function showBox(id) {
+      z++;
+      document.getElementById(id).style.zIndex = z;
+    }
+  </script>
 
-    <script src="four_script.js"></script>
 </body>
 </html>
-    
+
