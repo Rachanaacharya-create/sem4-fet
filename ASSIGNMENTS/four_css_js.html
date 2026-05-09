@@ -6,6 +6,10 @@
     <title>MY PORTFOLIO</title>
 
     <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
         .main-title{
             text-align:center;
             color:rgb(57, 17, 32);
@@ -15,6 +19,7 @@
         #Student{
             text-align:center;
             color:rgb(105, 191, 220);
+            cursor: pointer;
         }
 
         .section-title{
@@ -32,6 +37,29 @@
         h3{
             text-decoration: underline;
         }
+
+        /* NEW BOX FOR Z-INDEX DEMO */
+        .card {
+            position: relative;
+            width: 70%;
+            margin: 20px auto;
+            padding: 20px;
+            background: #f5f5f5;
+            border-radius: 10px;
+            z-index: 1;
+        }
+
+        /* OVERLAY (will appear above card) */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.2);
+            z-index: 2;
+            display: none;
+        }
     </style>
 </head>
 
@@ -39,9 +67,13 @@
 
     <h1 class="main-title">RACHANA ACHARYA</h1>
 
-    <h2 id="Student">
-        Second year student / B.E in COMPUTER SCIENCE & ENGINEERING
-    </h2>
+    <div class="card" id="cardBox">
+        <div class="overlay" id="overlay"></div>
+
+        <h2 id="Student">
+            Second year student / B.E in COMPUTER SCIENCE & ENGINEERING
+        </h2>
+    </div>
 
     <h3 class="section-title">ABOUT ME</h3>
     <p class="DES">
@@ -49,7 +81,6 @@
         I am passionate about computer science and enjoy exploring new technologies.
         I work hard to improve my skills and stay updated with the latest trends.
         I am motivated to achieve my goals and build a successful career.
-
     </p>
 
     <h3 class="section-title">MY GOALS</h3>
@@ -57,7 +88,6 @@
         My goal is to become a skilled software engineer in the future.
         I want to work on innovative projects that solve real-world problems. 
         I aim to continuously learn and grow in my field. I also hope to contribute positively to the technology industry.
-      
     </p>
 
     <p>
@@ -67,3 +97,4 @@
     <script src="one_script.js"></script>
 </body>
 </html>
+       
