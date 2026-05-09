@@ -1,22 +1,34 @@
-const studentText = document.getElementById("Student");
+function changeParagraphColor() {
+    let choice = prompt(
+        "Which paragraph do you want to change?\n\n" +
+        "1 → ABOUT ME\n" +
+        "2 → MY GOALS"
+    );
 
-studentText.addEventListener("click", function () {
-    let color = prompt("Type a color: red, green, or blue");
+    // Convert input safely
+    choice = choice ? choice.trim() : "";
 
-    if (color === null) return;
+    let color = prompt("Enter a color name (e.g., red, blue, green, orange):");
 
-    color = color.toLowerCase().trim();
-
-    if (color === "red") {
-        studentText.style.color = "red";
-    } 
-    else if (color === "green") {
-        studentText.style.color = "green";
-    } 
-    else if (color === "blue") {
-        studentText.style.color = "blue";
-    } 
-    else {
-        alert("Please enter only: red, green, or blue");
+    if (!color) {
+        alert("No color entered!");
+        return;
     }
-});
+
+    color = color.trim();
+
+    switch (choice) {
+        case "1":
+            document.getElementById("aboutPara").style.color = color;
+            alert("ABOUT ME paragraph color changed to " + color);
+            break;
+
+        case "2":
+            document.getElementById("goalPara").style.color = color;
+            alert("MY GOALS paragraph color changed to " + color);
+            break;
+
+        default:
+            alert("Invalid choice! Please enter 1 or 2.");
+    }
+}
