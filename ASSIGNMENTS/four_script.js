@@ -1,7 +1,11 @@
 const studentText = document.getElementById("Student");
 
 studentText.addEventListener("click", function () {
-    let color = prompt("Enter a color (red, green, blue):");
+    let color = prompt("Type a color: red, green, or blue");
+
+    if (color === null) return;
+
+    color = color.toLowerCase().trim();
 
     if (color === "red") {
         studentText.style.color = "red";
@@ -13,6 +17,6 @@ studentText.addEventListener("click", function () {
         studentText.style.color = "blue";
     } 
     else {
-        alert("Please enter only red, green, or blue.");
+        alert("Please enter only: red, green, or blue");
     }
 });
